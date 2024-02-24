@@ -11,6 +11,10 @@ services:
       # comment out the POSTGRES_HOST_AUTH_METHOD variable
       #- POSTGRES_PASSWORD=""
       - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_USER=<name_of_user>
+      - POSTGRES_HOST=<host_name>
+      - POSTGRES_DB=<database_name>
+      - POSTGRES_PORT=<port_number>
 
     ports:
       - "5432:5432"

@@ -1,12 +1,15 @@
 from typing import Union
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
+from sqlalchemy.orm import Session
+
+from app.database import get_db
 
 app = FastAPI()
 
 
 @app.get("/")
-def read_root():
+def read_root(db: Session = Depends(get_db)):
     return {"Hello": "World"}
 
 
